@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            /* table 의 border와 td 의 border 가 겹치는 부분... 하나로 표현.. */
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 10px 20px
+        }
+    </style>
+</head>
+<body>
+    <!-- table 에서 headers 로 cell title 과 연결은 가독기와 관련있지
+     자동으로 매핑되는 것은 아니다.. -->
+    <table>
+        <tr>
+            <th id="name">Name</th>
+            <th id="email">Email</th>
+            <th id="phone">Phone</th>
+            <th id="addr">Address</th>
+        </tr>
+        <tr>
+            <td headers="name">홍길동</td>
+            <td headers="phone">01011112222</td>
+            <td headers="addr">busan</td>
+            <td headers="email">a@a.com</td>
+        </tr>
+    </table>
+
+    <br/>
+    <!-- span test -->
+     <table width="300px">
+        <tr>
+            <td colspan="4"><center>title</center></td>
+        </tr>
+        <tr>
+            <td colspan="2">sub title1</td>
+            <td colspan="2">sub title2</td>
+        </tr>
+        <tr>
+            <td>col1</td>
+            <td>col2</td>
+            <td>col3</td>
+            <td>col4</td>
+        </tr>
+        <tr>
+            <td rowspan="2">col1</td>
+            <td>col2</td>
+            <td>col3</td>
+            <td>col4</td>
+        </tr>
+        <tr>
+            <td>col2</td>
+            <td>col3</td>
+            <td>col4</td>
+        </tr>
+     </table>
+</body>
+</html>
