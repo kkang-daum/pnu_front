@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a1 {
+            background-color: red;
+        }
+        .a2 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- p는 개행이 목적이 아니라 문단을 묶기 위한 용도로 사용된다.
+    'block-css-한줄 차지' 요소여서 개행이 자동으로 되기는 하지만.. 개행 자체가 
+    목적은 아님으로.. 중첩 자체가 의미가 없다.. -->
+    <p>
+    <p>
+        hello
+    </p>
+    </p>
+    <p>
+        world
+    </p>
+
+    <!-- inline 요소.. 개행을 목적으로..  -->
+    hello
+    <br />
+    <br/>
+    <br/>
+    world
+
+    <!-- br 은 body를 가질수 없는 태그.. 인위적으로 body 추가가 의미가 없다.. -->
+    <p class="a1">hello</p>
+    <p class="a2">world</p>
+    hello <br class="a1">world</br>
+
+    <!-- strong,  b 
+     UI 적으로는 동일하지만 웹 접근성 측면에서는 차이가 있다.
+     가독기에 의해 강조되어서 읽어야 하는 부분.. - strong-->
+     <p>
+        <b>롯데자이언츠</b>는 부산이 연고지인 야구구단이다.
+     </p>
+     <p>
+        <strong>롯데자이언츠</strong>는 부산이 연고지인 야구구단이다.
+     </p>
+
+     <p>
+        <!-- abbr 줄임말.. title 문자열이 풍선 문자열로 자동 나온다.. -->
+        <abbr title="International Olympic Committee">IOC</abbr>
+        국제 올림픽 위원회
+     </p>
+     <p>
+        <!-- 프로그램 코드 UI  -->
+        <code>button</code> tag 는 유저 클릭 이벤트를 처리하기 위한 태그입니다.
+        <br/>
+        다음은 js 에서 콘솔 출력하기 위한 코드입니다.
+        <code>console.log('hello')</code>
+     </p>
+
+     <p>
+        <!-- 첨자 -->
+        H<sub>2</sub>O <br/>
+        (a+b)<sup>2</sup>
+     </p>
+
+     <p>
+        aaa bbb <u>ccc</u> ddd <br/>
+        aaa bbb <del>ccc</del> ddd <br/>
+     </p>
+
+
+</body>
+
+</html>
