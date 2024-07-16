@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link 태그는 css 파일만을 위한 것이 아니다.. rel 로 명시해야.. -->
+    <link href="style/test1.css" rel="stylesheet"/>
+    <style>
+        /* id test2 하위.. 의 h1 태그.. */
+        #test2 h1 {
+            font-size: 18pt;
+            color: red;
+        }
+
+        #test2 p {
+            font-size: 16pt; color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- inline style -->
+    <div id="test1">
+        <h1 style="font-size: 18pt; color: orange;">PNU Mini Bootcamp - Front End</h1>
+        <p style="font-size: 16pt; color: lightgray;">2024/07/15 ~ 27 - 6공학관</p>
+    </div>
+
+    <div id="test2">
+        <h1>PNU Mini Bootcamp - Front End</h1>
+        <p>2024/07/15 ~ 27 - 6공학관</p>
+    </div>
+
+    <div id="test3">
+        <h1 id="a1">PNU Mini Bootcamp - Front End</h1>
+        <p class="green">2024/07/15 ~ 27 - 6공학관</p>
+    </div>
+</body>
+
+</html>
