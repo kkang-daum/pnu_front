@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- action: server url
+     input id - js, css 와 관련.. front 만의 문제.. 
+     input name - server 전송시 key,  value 는 유저 입력 데이터.. 
+     유저가 kim 이라고 입력했다면 submit 시에.. fname=kim 으로 서버에 전달
+     key=value&key=value : query 문자열 형태.. -->
+     <!-- http://127.0.0.1:5500/html/addUser?fname=aaa&lname=bbb -->
+    <form action="addUser">
+        first name : <input type="text" id="fname" name="fname"/><br/>
+        last name : <input type="text" id="lname" name="lname"/><br/>
+        <input type="submit" value="가입"/>
+    </form>
+    <br/>
+
+    <!-- http://127.0.0.1:5500/html/addUser 
+        http request body stream 으로 데이터 전송 : fname=aaa&lname=bbb
+    -->
+    <form action="addUser" method="post">
+        first name : <input type="text" id="fname" name="fname"/><br/>
+        last name : <input type="text" id="lname" name="lname"/><br/>
+        <input type="submit" value="가입"/>
+    </form>
+
+    <form>
+        <!-- label 의 for 와 input 의 id 매핑..  -->
+        <label for="phone">phone</label>
+        <input type="phone" name="phone" id="phone"
+            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+            title="전화번호 타입에 맞게 입력해 주세요"/>
+        <input type="submit"/>
+    </form>
+
+    <!-- checkbox name 다르게, value 없이.. 
+     http://127.0.0.1:5500/html/add?a1=on&a2=on -->
+    <form action="add">
+        <input type="checkbox" name="a1">bike<br/>
+        <input type="checkbox" name="a2">car<br/>
+        <input type="checkbox" name="a3">boat<br/>
+        <input type="submit"/>
+    </form>
+
+    <!-- checkbox name 다르게, value 있다면.. 
+     http://127.0.0.1:5500/html/add?a1=10&a2=20 -->
+     <form action="add">
+        <input type="checkbox" name="a1" value="10">bike<br/>
+        <input type="checkbox" name="a2" value="20">car<br/>
+        <input type="checkbox" name="a3" value="30">boat<br/>
+        <input type="submit"/>
+    </form>
+
+    <!-- checkbox name 동일하게, value 있다면.. 
+     http://127.0.0.1:5500/html/add?a1=10&a1=20 -->
+     <form action="add">
+        <input type="checkbox" name="a1" value="10">bike<br/>
+        <input type="checkbox" name="a1" value="20">car<br/>
+        <input type="checkbox" name="a1" value="30">boat<br/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>

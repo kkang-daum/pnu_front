@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/sample1.jpg" />
+    <br/>
+    <!-- width 만 주면.. 알아서 종횡비 유지되어 나온다.. -->
+    <img src="./images/sample1.jpg" width="128"/>
+    <br/>
+    <img src="./images/sample1.jpg" width="50%"/>
+    <br/>
+    <!-- img map -->
+     <img src="./images/workplace.jpg" usemap="#workmap"/>
+     <map name="workmap">
+        <area
+        shape="rect"
+        coords="34, 44, 270, 350"
+        href="http://www.google.com"/>
+        <area
+        shape="circle"
+        coords="337, 300, 44"
+        href="http://www.naver.com"/>
+     </map>
+
+     <br/>
+     <!-- 이미지 출력.. 표준.. 
+      반응형 웹(responsive web) 
+      desktop, mobile - 동일 이미지가 서비스 되어야 하는가? - 퍼퍼먼스는 어쩔려고???
+      사이즈를 다르게 해서 이미지를 서버에서 여러개 준비..
+      디바이스에 맞는 이미지를 서비스.. 
+
+      반응형은 동적으로.. 이미지를 디바이스에 맞게 선택하겠다는 의도..
+      js 에서 동적으로 src 의 이미지를 결정해야 하는데.. 
+      귀찮다.. 
+
+      이미지 반응형을 태그로 지원하기 위한 표준이 picture
+     -->
+      <picture>
+        <source media="(min-width: 1000px)" srcset="./images/sample1.jpg"/>
+        <source media="(min-width: 800px)" srcset="./images/sample2.jpg"/>
+        <img src="./images/sample3.jpg"/>
+      </picture>
+</body>
+</html>

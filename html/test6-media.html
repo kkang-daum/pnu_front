@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- object -->
+     <object data="./medias/audio.mp3" width="400" height="300"></object>
+     <br/>
+     <object data="./medias/video.mp4" width="400" height="300"></object>
+
+     <br/>
+     <!-- html5 .... -->
+      <audio src="./medias/audio.mp3" controls></audio>
+      <br/>
+      <video src="./medias/video.mp4" controls width="320" height="240"></video>
+
+      <!-- 아래처럼 audio, video 에 출력되어야할 소스를 source 태그로.. 
+       영상, 음원 파일의 포멧은 다양하다..
+       브라우저에서 html5의 video, audio 태그는 지원한다고 하더라도..
+       어떤 브라우저에 mp4 타입을 지원하지 않거나.. 다양할 수 있다..
+       video 에서 파일을 명시하지 않고..
+       source 에서 각 포멧대로 여러개를 걸어서 처리.. 
+      -->
+       <video width="320" height="240" controls>
+        <source src="./medias/video.mp4" type="video/mp4"/>
+       </video>
+</body>
+</html>
