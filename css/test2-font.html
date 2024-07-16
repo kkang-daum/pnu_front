@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: gray;
+            line-height: 1.5em;
+            /* 폰트는 ,로 여러개.. 앞에서부터 순차적 판단..
+            유저 컴퓨터에 해당 폰트 있어야 하고.. */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .one {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            line-height: 1.5em;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .two {
+            /* 문자열과 관련된 속성이 여러개다.. 윗처럼 하나하나를 개별적으로 걸어도 되고
+            한꺼번에 걸수도 있다.. 
+            한꺼번에 선언하면 순서 중요하다..
+            font-style font-weight font-size/line-height font-family*/
+            font: normal 700 16px/1.5em "Times New Roman", Times, serif;
+        }
+
+        .three {
+            /* em 은 부모의 사이즈의 배율..  */
+            font-size: 2em;
+            line-height: 1.5em;
+        }
+
+        .four {
+            /* rem 은 body 적용 사이즈의 배율..  */
+            font-size: 2rem;
+            line-height: 1.5em;
+        }
+
+        /* web font
+        web font 를 먼저 선언하고.. 선언된 폰트를 특정 태그에 적용..  */
+        @font-face {
+            /* 이름은 폰트 파일과 달라도 된다.. 이 곳에서의 식별역할만.. */
+            font-family: "Ostrich1";
+            src: local("Ostrich Snas"),
+                url("fonts/ostrich-sans-bold.eot") format("eot"),
+                url("fonts/ostrich-sans-bold.woff") format("woff"),
+                url("fonts/ostrich-sans-bold.ttf") format("truetype"),
+                url("fonts/ostrich-sans-bold.svg") format("svg")
+        }
+
+        .five {
+            font-family: "Ostrich1";
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <style>
+        .six {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>HTML - Hyper Text Markup Language</h1>
+    <p class="one">
+        모습을 기술하기 위한 마크업 언어.
+        프로그래밍 언어가 아니라 마크업 정보를 표현하는 마크업 언어로 문서의 내용 이외의 문서의 구조나 서식 같은 것을 포함한다.
+        보면 알겠지만 애초에 이름 HTML의 ML이 마크업 언어라는 뜻이다. 웹사이트에서 흔히 볼 수 있는 htm이나 html 확장자가 바로 이 언어로 작성된 문서다.
+    </p>
+
+    <h1>CSS - Cascading Style Sheet</h1>
+    <p class="two">
+        HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일 시트 언어.
+
+        CSS의 C가 Cascading[1]의 약자인데, 이는 상위 요소의 스타일 속성을 자손 요소들에게 상속시켜주는 모습이 DOM 트리구조에서 마치 폭포수처럼 내려가는 모습을 닮았기 때문이다.
+        다만 예외로 마진, 패딩, 보더 등의 박스모델 관련 속성은 상속되지 않는다. 물론 inherit 값을 줘서 강제로 상속시킬 순 있다.
+    </p>
+
+    <h1>자바스크립트</h1>
+    <div style="font-size: 20px;">
+        <p class="three">
+            자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용되며,
+            다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.
+        </p>
+    </div>
+
+    <h1>라이브러리</h1>
+    <div style="font-size: 20px;">
+        <p class="four">
+            라이브러리(영어: library)는 주로 소프트웨어를 개발할 때 컴퓨터 프로그램이 사용하는 비휘발성 자원의 모임이다.
+            여기에는 구성 데이터, 문서, 도움말 자료, 메시지 틀, 미리 작성된 코드, 서브루틴(함수), 클래스, 값, 자료형 사양을 포함할 수 있다.
+            OS/360 및 이후 세대에서는 파티션 데이터 세트로 부른다.
+        </p>
+    </div>
+
+    <h1>프레임워크</h1>
+    <p class="five">
+        컴퓨터 프로그래밍에서 소프트웨어 프레임워크(software framework)는 복잡한 문제를 해결하거나 서술하는 데 사용되는 기본 개념 구조이다.
+        간단히 뼈대, 골조(骨組), 프레임워크(framework)라고도 한다.
+        이렇게 매우 폭넓은 정의는 이 용어를 버즈워드(buzzword)로서, 특히 소프트웨어 환경에서 사용할 수 있게 만들어 준다.
+    </p>
+
+    <h1>프레임워크</h1>
+    <p class="six">
+        컴퓨터 프로그래밍에서 소프트웨어 프레임워크(software framework)는 복잡한 문제를 해결하거나 서술하는 데 사용되는 기본 개념 구조이다.
+        간단히 뼈대, 골조(骨組), 프레임워크(framework)라고도 한다.
+        이렇게 매우 폭넓은 정의는 이 용어를 버즈워드(buzzword)로서, 특히 소프트웨어 환경에서 사용할 수 있게 만들어 준다.
+    </p>
+</body>
+
+</html>
