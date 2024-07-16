@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p, span {
+            border: 1px solid #222;
+        }
+
+        /* display 설정 */
+        #id1, #id2 {
+            display: inline;
+            /* inline 에서 사이즈는 적용 안된다.. */
+            width: 50%;
+        }
+        #id3, #id4 {
+            display: block;
+            width: 50%;
+        }
+
+        /* inline 으로 만들어 한줄여 여러개 뿌리고 싶다..
+        그런데 사이즈도 지정하고 싶다.. */
+        #id5, #id6 {
+            display: inline-block;
+            width: 20%;
+            height: 50px;
+        }
+
+        #img1 {
+            border-radius: 25px;
+        }
+        #img2 {
+            border-radius: 50%;
+        }
+        #img3 {
+            /* 가로 - 세로 */
+            border-bottom-right-radius: 50% 30%;
+            border-top-left-radius: 50px 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>block</h2>
+    <p>hello</p>
+    <p>world</p>
+
+    <h2>inline</h2>
+    <span>hello</span>
+    <span>world</span>
+
+
+    <h2>display - inline</h2>
+    <p id="id1">hello</p>
+    <p id="id2">world</p>
+
+    <h2>display-block</h2>
+    <span id="id3">hello</span>
+    <span id="id4">world</span>
+
+
+    <h2>display-inline-block</h2>
+    <span id="id5">hello</span>
+    <span id="id6">world</span>
+
+    <br/>
+
+
+    <img id="img1" src="../html/images/sample1.jpg"/>
+    <img id="img2" src="../html/images/sample1.jpg"/>
+    <img id="img3" src="../html/images/sample1.jpg"/>
+</body>
+</html>
