@@ -1,0 +1,16 @@
+$bgColr: red;
+$font-h1: 28px;
+$valid-sides: left, center, right;//배열 변수
+$font-size: ("a1": 45px, "a2": 19px, "a3": 16px);//map 변수
+
+h1 {
+    $spanColor: blue;//로컬 변수..
+    color: $bgColr;
+    font-size: map-get($font-size, "a1") * 2;
+    span {
+        color: $spanColor;
+    }
+}
+p{
+    text-align: nth($valid-sides, 2);
+}
