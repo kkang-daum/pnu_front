@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //scope test.................
+        // let name = "홍길동"
+        // const myFun = () => {
+        //     let name = '김길동'
+        //     console.log(`in fun 1, name = ${name}`)
+        //     for (let i = 0; i < 1; i++) {
+        //         let name = '이길동'
+        //         console.log(`in fun 2, for,  name = ${name}`)
+        //     }
+        //     console.log(`in fun 3, name = ${name}`)
+        //     if (true) {
+        //         let name = '박길동'
+        //         console.log(`in fun 4, if,  name = ${name}`)
+        //     }
+        //     console.log(`in fun 5, name = ${name}`)
+        // }
+        // myFun()
+        // console.log(`outer fun, name = ${name}`)
+        // in fun 1, name = 김길동
+        // in fun 2, for,  name = 이길동
+        // in fun 3, name = 김길동
+        // in fun 4, if,  name = 박길동
+        // in fun 5, name = 김길동
+        // outer fun, name = 홍길동
+
+        var name = "홍길동"
+        const myFun = () => {
+            var name = '김길동'
+            console.log(`in fun 1, name = ${name}`)
+            for (let i = 0; i < 1; i++) {
+                var name = '이길동'
+                console.log(`in fun 2, for,  name = ${name}`)
+            }
+            console.log(`in fun 3, name = ${name}`)
+            if (true) {
+                var name = '박길동'
+                console.log(`in fun 4, if,  name = ${name}`)
+            }
+            console.log(`in fun 5, name = ${name}`)
+        }
+        myFun()
+        console.log(`outer fun, name = ${name}`)
+    </script>
+</body>
+
+</html>
