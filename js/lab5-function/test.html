@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //default parameter.... 
+        function myFun1(arg1, arg2 = 0){
+            console.log(`arg1 : ${arg1}, arg2: ${arg2}`)
+        }
+        myFun1()//undefined, arg2: 0
+        myFun1(10)//10, 0
+        myFun1(10, 20)//10, 20
+
+        //rest parameter...............
+        function myFun2(arg1, ...arg2){
+            console.log(`arg1 : ${arg1}, arg2: ${arg2}`)
+            console.log(arg2)
+        }
+        myFun2()//undefined, []
+        myFun2(10, 20)
+        myFun2(10, 20, 30, 40)
+
+        //함수 선언법.. 
+        //일반함수.. 
+        function fun1(arg1){
+            return arg1 * 10
+        }
+        //함수 표현식 - 익명함수로...
+        const fun2 = function(arg1){
+            return arg1 * 10
+        }
+        //함수 표현식 - 화살표함수.. 
+        const fun3 = (arg1) => {
+            return arg1 * 10
+        }
+        //화살표 함수.. 약식으로..
+        const fun4 = arg1 => arg1 * 10
+
+        //hof - high order function... (고차함수..)
+        function myFun3(argFun){
+            argFun()
+            return () => {
+                console.log('i am result fun')
+            }
+        }
+
+        const resultFun = myFun3(() => {
+            console.log('i am callback function')
+        })
+        resultFun()
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
