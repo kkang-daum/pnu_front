@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data1 = 10
+        let data2 = 20
+        const data3 = 30
+
+        data1 = 20
+        data2 = 30
+        // data3 = 40//error
+
+        //표현식 함수.. 함수를 변수에 대입가능.. 
+        let myFun1 = () => {
+            console.log('step1')
+        }
+        myFun1 = () => {
+            console.log('step2')
+        }
+        myFun1()
+
+        const myFun2 = () => {
+            console.log('step1')
+        }
+        //error... 
+        // myFun2 = () => {
+        //     console.log('step2')
+        // }
+        // myFun2()
+
+
+        //hoisting..................
+        // console.log(`step1 , data = ${data4}`)//step1 , data = undefined
+        // data4 = 10
+        // console.log(`step2 , data = ${data4}`)//step2 , data = 10
+        // var data4 = 10
+
+
+        //error... 
+        // console.log(`step1 , data = ${data4}`)//step1 , data = undefined
+        // data4 = 10
+        // console.log(`step2 , data = ${data4}`)//step2 , data = 10
+        // let data4 = 10
+
+
+        //함수 hoisting... function 예약어로 선언된 함수는 hoisting 지원... 
+        //표현식 함수는 error...  
+        //ok......
+        // console.log(fun1())
+        // function fun1(){
+        //     return 'hello'
+        // }
+
+        //error.........Cannot access 'fun1'......
+        // console.log(fun1())
+        // const fun1 = () => {
+        //     return 'hello'
+        // }
+
+        //error... fun1 is not a function
+        // console.log(fun1())
+        // var fun1 = () => {
+        //     return 'hello'
+        // }
+
+    </script>
+</body>
+</html>
