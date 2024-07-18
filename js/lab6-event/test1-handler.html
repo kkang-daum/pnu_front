@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button1">click me</button>
+    <button id="button2">click me</button>
+    <button onclick="myEventHandler()">click me</button>
+
+    <script>
+        //방법 1 - js 에서 addEventListener() 로 직접 등록..
+        let button1 = document.getElementById('button1')
+        button1.addEventListener('click', () => {
+            alert('button1 click')
+        })
+
+        //방법2 - onxxx 로 등록.. 
+        let button2 = document.getElementById('button2')
+        button2.onclick = () => {
+            alert('button2 click')
+        }
+
+        //방법3 - html tag 에서 속성으로 직접 등록.. 
+        const myEventHandler = () => {
+            alert('button3 click')
+        }
+    </script>
+</body>
+</html>
