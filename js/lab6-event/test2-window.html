@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <script>
+        //js 모든 곳에서 window.xxx 이면... window. 생략 가능.. 
+        addEventListener('load', () => {
+            alert('load...')
+        })
+        addEventListener('resize', () => {
+            console.log(`width: ${innerWidth}, height: ${innerHeight}`)
+        })
+        addEventListener('copy', (e) => {
+            let thisURL = document.URL//현 html 의 url
+            //기본으로 등록된 이벤트 처리 되지 않게 하기 위해서.. 
+            e.preventDefault()
+            e.clipboardData.setData(
+                'text/plain',
+                `${document.getSelection()} - 출처 : ${thisURL}`
+            )
+        })
+        //llo worl - 출처 : http://127.0.0.1:5500/js/lab6-event/test2-window.html
+    </script>
+</body>
+</html>

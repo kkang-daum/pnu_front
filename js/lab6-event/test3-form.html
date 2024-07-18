@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="addUser">
+        <input type="text" id="input1"/><br/>
+        <select id="select1">
+            <option>option1</option>
+            <option>option2</option>
+        </select>
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+    </form>
+    <script>
+        let form = document.getElementById('form')
+        form.addEventListener('submit', (e) => {
+            //submit 은 기본 이벤트가 내장되어 있다. 
+            //서버 연동하고 서버의 결과를 띄울려고 한다..
+            //js 에서 제어하겠다면.. 기본 이벤트 처리되지 않게..
+            e.preventDefault()
+            alert('submit click')
+        })
+        form.addEventListener('reset', () => {
+            alert('reset click')
+        })
+
+        let input1 = document.getElementById('input1')
+        input1.addEventListener('focus', (e) => {
+            //e.target - 현재 이벤트가 발생한 객체.. 
+            e.target.style.backgroundColor = 'pink'
+        })
+        input1.addEventListener('blur', (e) => {
+            //e.target - 현재 이벤트가 발생한 객체.. 
+            e.target.style.backgroundColor = ''
+        })
+
+        let select1 = document.getElementById('select1')
+        select1.addEventListener('change', (e) => {
+            alert(`option : ${e.target.value}`)
+        })
+    </script>
+</body>
+</html>
