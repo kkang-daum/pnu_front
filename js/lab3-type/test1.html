@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //type 이 없는 것이 아니라.. 대입되는 값으로 타입을 유추하는 것이다..
+        let data1 = 10
+        let data2 = '10'
+        console.log(`data1 type is ${typeof data1}`)//number
+        console.log(`data2 type is ${typeof data2}`)//string
+        console.log(data1 + 10)//20
+        console.log(data1 + data2)//1010
+
+        //null 과 undefined 는 구분해서.... 
+        let data3 = null 
+        let data4
+        console.log(data3, `data3 type is ${typeof data3}`)//null 'data3 type is object'
+        console.log(data4, `data3 type is ${typeof data4}`)//undefined 'data3 type is undefined'
+
+        //배열.... 
+        let users = [10, 20, 30]
+        //배열변수는 Array 타입의 객체이다.. 
+        console.log(`users type is ${typeof users}`)//users type is object
+        for(let i = 0; i < users.length; i++){
+            console.log(users[i])
+        }
+        //배열의 값을 순차적으로 모두 핸들링 할때 위처럼 for 를 작성해도 되지만.. 
+        users.forEach((value) => {
+            console.log(value)
+        })
+    </script>
+</body>
+</html>
