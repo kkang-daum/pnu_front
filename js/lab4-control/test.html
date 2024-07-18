@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        const primeTest = () => {
+            let no = prompt('2 이상의 숫자를 입력해 주세요.')
+            let message = ''//결과 출력 메시지.. 
+            if(no !== null){
+                if(no > 1){
+                    let divisor = 2
+                    message = `${no}는 소수입니다.`
+                    while(divisor < no){
+                        if(no % divisor === 0){
+                            message = `${no}는 소수가 아닙니다.`
+                            break
+                        }else {
+                            divisor++
+                        }
+                    }
+                }else {
+                    message = '2 이상의 숫자를 입력해야 합니다.'
+                }
+            }else {
+                message = '아무것도 입력하지 않으셨습니다.'
+            }
+            document.querySelector('#result').innerHTML = message
+        }
+    </script>
+    <h1 id="result"></h1>
+    <button onclick="primeTest()">prime test</button>
+</body>
+</html>
