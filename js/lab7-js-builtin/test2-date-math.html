@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //매개변수를 지정하지 않고 생성하면 현재 시간.. 
+        let date1 = new Date()
+        console.log(date1.toString())//Fri Jul 19 2024 11:14:06 GMT+0900 (한국 표준시)
+        console.log(date1.toLocaleString())//2024. 7. 19. 오전 11:14:06
+        console.log(date1.getFullYear())//2024
+        console.log(date1.getMonth())//6 + 1
+        console.log(date1.getDate())//19
+        console.log(date1.getDay())//5 - 요일
+
+        let eventStartDate = new Date('2024-07-01T00:00:00')
+        let eventEndDate = new Date('2024-07-31T23:59:59')
+        let regDate = new Date('2024-07-19T10:00:00')
+        if(regDate.getTime() < eventStartDate.getTime()){
+            console.log('이벤트 시작 전입니다.')
+        }else if(regDate.getTime() > eventEndDate.getTime()){
+            console.log('이벤트 종료되었습니다.')
+        }else {
+            console.log('정상적으로 예약이 되었습니다.')
+        }
+
+        //난수 발생... 
+        console.log(Math.random() * 10)
+        //데이터중 최고, 최소 획득.. 
+        console.log(Math.max(20, 45, 30, 2, 32))//45
+        let array = [20, 45, 30, 2, 32]
+        console.log(Math.max(...array))
+    </script>
+</body>
+</html>

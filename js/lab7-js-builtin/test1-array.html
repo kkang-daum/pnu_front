@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let prod1 = ['book1', 'book2']
+        let prod2 = new Array('book1', 'book2')
+        console.log(typeof prod1, prod1 instanceof Array)//object true
+        console.log(typeof prod2, prod2 instanceof Array)//object true
+
+        //배열 데이터를 순차적으로 모두 뽑아서 로직을 실행.. 
+        prod1.forEach((data, index) => {
+            console.log(`data : ${data}, index : ${index}`)
+        })
+
+        let array = [10, 20, 30, 40]
+        //마지막에 추가
+        // array.push(100, 200)//[10, 20, 30, 40, 100, 200]
+        //앞에 추가..
+        // array.unshift(100, 200)//[100, 200, 10, 20, 30, 40]
+
+        //splice - 추가.. 두번째 매개변수를 0으로 주면 교체할 것이 없다는 의미
+        //추가.. 
+        // array.splice(2, 0, 100, 200)/[10, 20, 100, 200, 30, 40]
+        //splice - 교체.. 두번째 매개변수에 0 이상의 교체 데이터 갯수 지정.. 
+        // array.splice(2, 1, 100, 200)//[10, 20, 100, 200, 40]
+        //splice - 삭제.. 매개변수 두개만, 추가할 데이터를 주지 않으면 제거..
+        array.splice(2, 1)//[10, 20, 40]
+        console.log(array)
+
+        let array1 = [11, 3, 20, 15, 5]
+        //filter 함수의 반환 값은 배열이다.. 
+        //매개변수의 함수를 호출하고.. 그 함수에서 true 가 리턴된 데이터만 모아서 반환
+        let resultArray = array1.filter((value) => {
+            return value > 10
+        })
+        console.log(resultArray)//[11, 20, 15]
+
+        //map.. 개발자 콜백 함수를 거쳐서 리턴된 값을 모아서 다시 배열로.. 
+        let resultArray2 = array1.map((value) => {
+            return value * 10
+        })
+        console.log(resultArray2)//[110, 30, 200, 150, 50]
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
