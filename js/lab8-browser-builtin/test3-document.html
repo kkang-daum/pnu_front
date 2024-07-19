@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>todo list</h1>
+    <form action="">
+        <input type="text" id="subject" autofocus/>
+        <button id="button">add</button>
+    </form>
+    <ul id="list"></ul>
+
+    <script>
+        let button = document.getElementById('button')
+        let subject = document.getElementById('subject')
+        let list = document.getElementById('list')
+
+        button.addEventListener('click', function(e){
+            //유저 입력 데이터 획득.. 
+            let data = subject.value
+            //동적 node 를 만들어 화면 출력.. 
+            let newItem = document.createElement('li')
+            let newText = document.createTextNode(data)
+            newItem.appendChild(newText)
+
+            //document 에 js 노드를 추가해서 화면 출력.. 
+            list.insertBefore(newItem, list.childNodes[0])
+
+            //유저 입력 데이터 삭제.. 
+            subject.value = ''
+            //추가된 li 노드 클릭 이벤트. 클릭하면 li 삭제되게..
+            newItem.addEventListener('click', function(){
+                list.removeChild(this)
+            })
+            //form 의 기본 이벤트 처리되지 않게..
+            e.preventDefault()
+        })
+    </script>
+</body>
+</html>
