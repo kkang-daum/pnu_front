@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am Child Page</h1>
+    <button onclick="getMainData()">get main data</button><br/>
+    <button onclick="myClose()">close</button>
+    <script>
+        var childData = 20
+        function childFun(){
+            console.log('childFun call...')
+        }
+
+        function getMainData() {
+            //child window 에서 부모 창은 opener
+            console.log(`main data : ${opener.mainData}`)
+            opener.mainFun()
+        }
+
+        //opener 에서 자식창을 사용하게 하려면 꼭 자식창에서.. 자신을 어떤 이름으로
+        //사용해야 하는지를 알려줘야 한다..
+        opener.child = this
+
+        
+
+        function myClose() {
+            opener.location.href = 'http://www.google.com'
+            window.close()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //http://127.0.0.1:5500/js/lab8-browser-builtin/test2-location-navigator.html?name=kim&age=20#a1
+        console.log(location.href)
+        console.log(location.search)//?name=kim&age=20
+        console.log(location.hash)//#a1
+        console.log(location.origin)//http://127.0.0.1:5500
+        console.log(location.host)//127.0.0.1:5500
+        console.log(location.hostname)//127.0.0.1
+
+        //navigator .. 화면과 관련이 없는 브라우저 설정, 상태 정보..
+        console.log(navigator.language)
+        console.log(navigator.onLine)
+        //모든 브라우저에 브라우저와 브라우저의 플랫폼 정보를 위해 static 하게 
+        //지정된 문자열.. 
+        //Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+        //유저의 환경을 확인하기 위해서 front js 에서 획득.. 
+        //항상 서버 연동시에 자동으로 userAgent 는 http request header 로 서버에 전송
+        console.log(navigator.userAgent)
+    </script>
+</body>
+</html>

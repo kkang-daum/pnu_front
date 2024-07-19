@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>I am Main Page</h1>
+    <button onclick="myOpen()">go child</button><br/>
+    <button onclick="myClose()">close</button><br/>
+    <button onclick="myScroll()">scroll</button><br/>
+    <button onclick="getChildData()">get child data</button>
+    
+    <h1>Test</h1><h1>Test</h1><h1>Test</h1><h1>Test</h1><h1>Test</h1>
+    <h1>Test</h1><h1>Test</h1><h1>Test</h1><h1>Test</h1><h1>Test</h1>
+    <h1>Test</h1><h1>Test</h1><h1>Test</h1><h1>Test</h1><h1>Test</h1>
+
+    <script>
+        //open 함수에의해 뜨는 새 창을 지칭하기 위한 객체..
+        //이 객체를 유지했다가.. 이 객체로 그 창을 닫는다.
+        let childWindow
+
+        let myOpen = () => {
+            childWindow = window.open(
+                'test1-child.html',
+                '_blank',
+                'left=100,top=100,width=300,height=400'
+            )
+            if(childWindow == null){
+                alert('팝업이 차단되었습니다. 해제해주세요')
+            }
+        }
+
+        let myClose = () => {
+            //화면에서 새 창을 띄우고.. 그 창에 새로운 html 을 띄우는 것은
+            //window.open() 도 있고.. <a href="~~" target="">도 가능..
+            //<a> 태그에 의한 새창은 close 적용 안된다.
+            childWindow.close()
+        }
+        let myScroll = () => {
+            window.scrollBy(0, 100)
+        }
+
+        //child window 와 상호 연동 테스트........................
+        var mainData = 10
+        function mainFun() {
+            console.log('mainFun call........')
+        }
+
+        let getChildData = () => {
+            //child window 의 데이터, 함수.. 
+            //child 라는 객체 명은 개발자 임의 객체명..
+            console.log(`child data : ${child.childData}`)
+            child.childFun()
+        }
+    </script>
+</body>
+</html>
