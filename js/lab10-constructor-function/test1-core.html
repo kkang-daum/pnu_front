@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(name, no){
+            this.name = name//this 를 이용해야 객체 멤버에 추가된다.
+
+            let result = 0//얼마든지 변수 선언은 되지만.. this 를 추가하지 않으면
+            //호출될때 함수내에서 사용하기 위한 local variable 이다.. 객체 멤버 아니다.
+
+            //원한다면 특정 알로리즘 얼마든지 가능..
+            for(let i = 1; i<=no; i++){
+                result += i
+            }
+            this.result = result
+
+            this.sayHello = function(){
+                console.log(`name : ${name}, result : ${result}`)
+            }
+        }
+
+        let user1 = new User('홍길동', 10)
+        let user2 = new User('김길동', 20)
+
+        user1.sayHello()
+        user2.sayHello()
+    </script>
+</body>
+</html>
