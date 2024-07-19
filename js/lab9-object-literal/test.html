@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체 선언(생성) - object literal 방식으로..
+        let phone = '0101111'
+
+        let user = {
+            name: '홍길동',
+            age: 20,
+            phone,//phone: phone,
+            sayHello: function() {
+                //객체 내에서 자신의 멤버 접근은 this. 으로해야.. 아래는 에러..
+                //아래처럼 작성하면 window.name, window.age 로 한것과 동일..
+                // console.log(`name : ${name}, age: ${age}`)
+                console.log(`name : ${this.name}, age: ${this.age}`)//name : 홍길동, age: 20
+            },
+            sayHello2: () => {
+                //object literal 에 member method(function)를 arrow function
+                //으로 선언한 것이 잘못된 것이 아니라..
+                //hello name : , age: undefined
+                //object literal 의 arrow function 은 this 로 object literal 객체를
+                //지칭할 수 없다..
+                //아래의 this 는 window 이다..
+                console.log(`hello name : ${this.name}, age: ${this.age}`)
+            }
+        }
+
+        console.log(typeof user)//object
+        console.log(user.name, user.age)//홍길동 20
+        user.sayHello()
+        user.sayHello2()
+
+        //js 객체는(object literal, constructor function)외부에서 멤버 추가 가능..
+        user.address = 'busan'
+        user.sayHello3 = function(){
+            console.log(`${this.name}, ${this.age}, ${this.phone}, ${this.address}`)
+        }
+        console.log(user)
+        user.sayHello3()
+    </script>
+</body>
+</html>
