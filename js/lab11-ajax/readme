@@ -1,0 +1,20 @@
+- node.js 설치
+https://nodejs.org/en
+기본으로 설치..
+
+- back-end 필요 package(library) 설치
+- package.json 에 명시된 라이브러리 다운로드
+- back-end 폴더에서 다음의 명령어 입력해서 필요 라이브러리 다운로드
+>npm install
+
+node 명령어
+node - js 실행
+npm - 필요 패키지(라이브러리) 설치, 삭제등
+다운로드 받은 패키지는 node_modules 에 설치된다.
+별도의 클래스패스 잡지 않아도 바로 node 에서 사용 가능.. 
+package.json - npm 환경파일
+package.json 의 dependencies 에 명시한 패키지가 >npm install 로 다운로드
+
+
+back-end 실행
+>node webserver.js
