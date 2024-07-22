@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수가 만들어지면 자동으로 이 함수를 위한 프로토타입 준비
+        //프로토타입내에 기본으로 생성자 추가..
+        //함수를 이용해 객체를 생성하면 내부적으로 프로토타입의 생성자 호출..
+        function User(name, age){
+            //함수 내에 변수, 함수를 얼마든지 선언할 수 있지만.. 
+            //this 예약어를 이용하지 않으면 생성되는 객체와는 관련이 없다.. 
+            //함수 호출시에만 사용하는 local 변수가 된다..
+            let data = 10
+            //생성되는 객체의 멤버.. 
+            //객체별로 메모리 별도 할당.. 
+            this.name = name
+            User.prototype.age = age
+        }
+        console.dir(User)
+        let user1 = new User('홍길동', 20)
+        console.log(user1.data)
+        let user2 = new User('김길동', 30)
+        console.log(user1.name, user1.age)//홍길동 30
+        console.log(user2.name, user2.age)//김길동 30
+    </script>
+</body>
+</html>
