@@ -1,0 +1,13 @@
+## vite 을 이용해 react project create 
+>npm init vite vite-app -- --template react
+
+## 프로젝트 폴더로 가서 package.json 에 명시된 라이브러리 다운로드
+>npm install
+
+## 실행
+>npm run dev
+
+## 배포 파일 추출..
+>npm run build
+==>dist 폴더를 자동으로 만들고.. 그 안에 배포 파일을 준비
+==>dist 내의 폴더/파일을 운용서버로 배포하면 된다..

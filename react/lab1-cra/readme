@@ -1,0 +1,8 @@
+## CRA 로 react project 생성.. 
+>npx create-react-app cra-app
+
+## react project 실행 테스트
+>cd cra-app
+>npm run start
+- project 의 파일이 bundler 에 의해 구성되어 
+- react project 에 내장된 서버에서 실행.. 
