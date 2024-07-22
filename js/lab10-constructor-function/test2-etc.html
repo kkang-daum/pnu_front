@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object listeral 선언..
+        let obj1 = {
+            name: '홍길동',
+            age : 20
+        }
+        console.log(obj1)
+        //위의 객체 생성은 아래처럼 선언한 것과 동일다.. 
+        let obj2 = Object.create(Object.prototype, {
+            name : {value:'홍길동'},
+            age : {value: 20}
+        })
+        console.log(obj2)
+
+        //object literal 객체를 하나 만들고 싶은데.. 상속 개념을 적용하고 싶다면.. 
+        function Shape(name){
+            this.name = name
+        }
+        Shape.prototype.draw = function(){
+            console.log(`${this.name} 의 그림을 그립니다. `)
+        }
+        //사각형 정보를 가지는 object literal 을 선언하고 싶다.. shape  draw 를 이용
+        //하고 싶다.. 
+        let rect1 = Object.create(Shape.prototype, {
+            name: {value:'rect1'},
+            width: {value: 10}
+        })
+        rect1.draw()
+
+        //...call, apply....함수의 객체 동적 지정.. ................
+        //특정 객체와 관련이 없는 독립적으로 선언된 함수가 있다..
+        let sayHello = function(arg1, arg2){
+            console.log(`Hello, ${this.name}, ${arg1}, ${arg2}`)
+        }
+
+        sayHello.call({name: '홍길동'}, 10, 20)
+        sayHello.call({name: '김길동'}, 20, 30)
+        //apply 와 call 의 차이는 매개변수 지정 방법의 차이..
+        sayHello.apply({name: '이길동'}, [10, 20])
+
+
+        //getter, setter
+        //모든 언어 공통, 변수를 함수로 이용해 데이터 획득/수정
+        let obj3 = {
+            _num: 0,
+            get num(){
+                return this._num
+            },
+            set num(value){
+                this._num = value
+            }
+        }
+
+        //객체에서는 함수인데.. 외부에서 변수로 이용.. 
+        obj3.num = 40
+        console.log(obj3.num)
+    </script>
+</body>
+</html>
