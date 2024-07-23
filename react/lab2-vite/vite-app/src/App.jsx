@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+//component - js 로 동적 제어되는 화면 구성
+//함수, 클래스로 만들 수 있다.. 
+const App = () => {
+  
+  //return 시킨 것이 이 component 의 화면이다..
+  //js 영역이다.. 화면을 document.createElement('div') 등으로 처리하기 힘들다
+  //js 코드내에서 화면은 html 로 명시하자.. <div>
+  //js 영역내에서 html 은 그냥 안된다.. jsx 라는 기술을 이용해야 한다.
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+    <div>
       <h1>HelloWorld</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
+//이 파일내에서 선언된 구성요소(함수, 변수, 클래스)
+//일차적으로는 이 파일내에서만 사용
+//만약 외부 파일에서도 사용해야 한다면 꼭 export 해야 한다..
+//몇개라도 export 가능하다..
+//export 할때 default 를 추가할 수도 있고 아닐 수도 있고..
+//default 로 export 하는 것은 하나만..
+//default 로 export 시킨 것은 외부 파일내에서 import 할때 이름을 바꿀수
+//있다..
 export default App
