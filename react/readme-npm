@@ -1,0 +1,32 @@
+node.js
+- node.exe - javascript runtimer : back-end web 에서 js 를 실행시키려고 주로 사용
+- npm.bat - dev tool - node package(library) manager - package download/update/delete
+
+CLI - Command Line Interface - 개발 환경을 터미널(command 창)에서 명령어 입력해서
+
+//node 기반의 프로젝트 구성 package.json 만드는 명령어
+>npm init
+
+//필요한 라이브러리를 다운로드 한다..
+>npm install axios
+>npm install bootstrap
+==>package.json 에 자동 등록된다..
+==>npm repository server에서 다운로드 된다..
+https://www.npmjs.com/
+
+
+package.json 을 공유한다음에..
+//package.json 에 등록된 package 를 한꺼번에 설치
+>npm install
+
+//설치된 package 를 지우겠다..
+>npm uninstall axios
+
+//node_modules 에 다운로드된 package 는 
+//node_modeles 폴더가 있는 위치부터 그 하위에서 모두 이용
+
+
+//만약 어떤 package 가 전체 컴퓨터내에서 사용해야 겠다면..
+//global 로 설치.. 
+>npm install -g axios
+==>현재는 배제하는 방법이다.. 충돌가능성이 너무 농후해서.
