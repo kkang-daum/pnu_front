@@ -1,3 +1,7 @@
+import Test1 from './Test1-jsx'
+//default 로 export 한 것은 이름 바꿔서 이용가능..
+import Test2 from './Test2-jsx'
+
 //component - js 로 동적 제어되는 화면 구성
 //함수, 클래스로 만들 수 있다.. 
 const App = () => {
@@ -5,7 +9,7 @@ const App = () => {
   const msg = "World"
   const addResult = (x, y) => {
     return (
-      <div>
+      <div className="card card-body bg-light">
         {x} + {y} = {x + y}
       </div>
     )
@@ -33,6 +37,9 @@ const App = () => {
       <h2>Hello, {msg}</h2>
       <hr/>
       {addResult(10, 20)}
+      {/* 개발자가 만든 컴포넌트를 화면에 출력.. 태그명으로.. */}
+      <Test1 />
+      <Test2 />
     </div>
   )
 }
