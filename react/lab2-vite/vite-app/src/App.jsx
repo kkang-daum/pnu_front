@@ -2,6 +2,7 @@ import Test1 from './Test1-jsx'
 //default 로 export 한 것은 이름 바꿔서 이용가능..
 import Test2 from './Test2-jsx'
 import PropsTest1 from './Test3-props'
+import StateTest from './Test4-state'
 
 //component - js 로 동적 제어되는 화면 구성
 //함수, 클래스로 만들 수 있다.. 
@@ -42,6 +43,7 @@ const App = () => {
       <Test1 />
       <Test2 />
       <PropsTest1 />
+      <StateTest />
     </div>
   )
 }
