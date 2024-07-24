@@ -8,10 +8,12 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import CSSTest from './lab1-style/Lab1App.jsx'
+import Lab2App from './lab2-proptype/Lab2App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <CSSTest />
+    {/* <CSSTest /> */}
+    <Lab2App />
   </React.StrictMode>,
 )
