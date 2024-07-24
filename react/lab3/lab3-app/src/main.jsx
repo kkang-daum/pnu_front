@@ -12,6 +12,7 @@ import Lab2App from './lab2-proptype/Lab2App.jsx'
 import EventApp from './lab3-event/Lab3App.jsx'
 import ControlledComponent from './lab4-control/Lab4App.jsx'
 import PropsTest from './lab5-class/Test1-props.jsx'
+import StateTest from './lab5-class/Test2-state.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Lab2App /> */}
     {/* <EventApp /> */}
     {/* <ControlledComponent /> */}
-    <PropsTest />
+    {/* <PropsTest /> */}
+    <StateTest />
   </React.StrictMode>,
 )
