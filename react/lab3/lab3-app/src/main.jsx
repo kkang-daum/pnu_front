@@ -14,6 +14,7 @@ import ControlledComponent from './lab4-control/Lab4App.jsx'
 import PropsTest from './lab5-class/Test1-props.jsx'
 import StateTest from './lab5-class/Test2-state.jsx'
 import LifecycleTest from './lab5-class/Test3-lifecycle-clock.jsx'
+import LifecycleTest2 from './lab5-class/Test4-Chatting.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <ControlledComponent /> */}
     {/* <PropsTest /> */}
     {/* <StateTest /> */}
-    <LifecycleTest />
+    {/* <LifecycleTest /> */}
+    <LifecycleTest2 />
   </React.StrictMode>,
 )
