@@ -1,0 +1,7 @@
+- github 에서 todo-server-app 다운로드
+- package.json 있는 폴더에서 >npm install
+- npm run start:dev 서버 구동
+- 브라우저에서 아래의 url 로 테스트
+http://localhost:8000/todolist/gdhong
+
+
