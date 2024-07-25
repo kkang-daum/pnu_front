@@ -57,15 +57,52 @@ const TodoContainer = () => {
     }
 
     const updateTodo = async (id, todo, desc, done, callback) => {
+        try{
+            const response = await axios.put(`${BASEURL}/${id}`, {todo, desc, done})
+            if(response.data.states === 'success'){
+                //수정한 데이터가 몇번째 index 인지 확인
+                let index = todoList.findIndex((todo) => todo.id === id)
+                //상태 변경을 위한 list 만든다.. 얕은 비교해서.. 
+                let newTodoList = produce(todoList, (draft) => {
+                    draft[index] = {...draft[index], todo, desc, done}
+                })
+                setTodoList(newTodoList)
+                callback()
+            }
+        }catch(e){
 
+        }
     }
 
     const toggleDone = async (id) => {
+        try {
+            let todoItem = todoList.find((todo) => todo.id === id)
+            const response = await axios.put(`${BASEURL}/${id}`, {...todoItem, done: !todoItem.done})
+            if(response.data.status === 'success'){
+                let index = todoList.findIndex((todo) => todo.id === id)
+                let newTodoList = produce(todoList, (draft) => {
+                    draft[index].done = !draft[index].done
+                })
+                setTodoList(newTodoList)
+            }
+        }catch(e){
 
+        }
     }
 
     const deleteTodo = async (id) => {
+        try{
+            const response = await axios.delete(`${BASEURL}/${id}`)
+            if(response.data.status === 'success'){
+                let index = todoList.findIndex((todo) => todo.id === id)
+                let newTodoList = produce(todoList, (draft) => {
+                    draft.splice(index, 1)
+                })
+                setTodoList(newTodoList)
+            }
+        }catch(e){
 
+        }
     }
 
     //아래의 함수는 누가 호출하는가? 하위 컴포넌트가.. 하위에 props 로 전달
