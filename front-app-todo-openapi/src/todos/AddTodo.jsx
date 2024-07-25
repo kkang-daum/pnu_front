@@ -51,10 +51,10 @@ const AddTodo = ({ callbacks }) => {
                         ></textarea>
                     </div>
                     <div className="form-group">
-                        <input type="button" className="btn btn-primary m-1"
-                            onClick={addTodoHandler}>추가</input>
-                        <input type="button" className="btn btn-primary m-1"
-                            onClick={() => navigate('/todos')}>취소</input>
+                        <button type="button" className="btn btn-primary m-1"
+                            onClick={addTodoHandler}>추가</button>
+                        <button type="button" className="btn btn-primary m-1"
+                            onClick={() => navigate('/todos')}>취소</button>
                     </div>
                 </div>
             </div>

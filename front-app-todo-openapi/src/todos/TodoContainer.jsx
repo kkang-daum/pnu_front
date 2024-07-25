@@ -34,7 +34,26 @@ const TodoContainer = () => {
 
     //신규 항목 추가.. 
     const addTodo = async (todo, desc, callback) => {
-
+        try{
+            const response = await axios.post(BASEURL, {todo, desc})
+            if(response.data.status === 'success'){
+                //상태를 변경해야 한다. 신규 추가해서..
+                //변경되지 않은 객체는 그대로 사용하기 위해서 .. 객체가 변경된
+                //것인지를 검사한다.. 그때 유용한 패키지가 immer
+                //immer 객체 변경된 것인지 판단..
+                //immer 는 얕은 비교. 객체의 메모리 주소만 비교.. 
+                let newTodoList = produce(todoList, (draft) => {
+                    draft.push({...response.data.item, cone: false})
+                })
+                setTodoList(newTodoList)
+                callback()
+            }else {
+                alert('추가실패 : '+response.data.message)
+            }
+        }catch(e){
+            if(e instanceof Error) alert('등록실패 : '+ e.message)
+            else alert('등록실패 : '+e)
+        }
     }
 
     const updateTodo = async (id, todo, desc, done, callback) => {

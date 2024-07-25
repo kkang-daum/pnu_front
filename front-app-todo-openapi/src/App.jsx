@@ -14,7 +14,7 @@ const App = () => {
           {/* Layout 하위에 선언한 것임으로.. Home 은 Layout 의 Outlet 에 출력 
           index 는 상위 조건 , /, 와 동일하면.. */}
           <Route index element={<Home />}/>
-          <Route path="/todos" element={<TodoContainer />}/>
+          <Route path="/todos*" element={<TodoContainer />}/>
         </Route>
       </Routes>
     </Router>
